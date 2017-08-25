@@ -1,0 +1,101 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body, input, text, textarea {
+  outline: none;
+  font-family: 'Arial', 'Microsoft YaHei', '黑体', '宋体', sans-serif;
+  font-size: 12px;
+}
+html, body {
+  background: #fff;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Main */
+.wrap {
+  text-align: center;
+  overflow: hidden;
+}
+.wrap .meta {
+  margin: 160px 0 0 0;
+  opacity: 0;
+  transform: translateY(-150px);
+  transition: .5s all ease;
+}
+.on .wrap .meta {
+  opacity: 1;
+  transform: translateY(0);
+}
+.wrap .meta .title {
+  line-height: 1em;
+  color: #ff4665;
+  font-size: 42px;
+  text-transform: uppercase;
+}
+.wrap .meta .description {
+  margin: 10px 0 0 0;
+  line-height: 1em;
+  color: #7e7e7e;
+  font-size: 16px;
+  font-weight: normal;
+}
+.wrap .link-area {
+  margin: 50px 0 0 0;
+  opacity: 0;
+  transition: .5s opacity ease;
+}
+.on .wrap .link-area {
+  opacity: 1;
+}
+.wrap .link-area input {
+  display: inline-block;
+  vertical-align: middle;
+}
+.wrap .link-area #url {
+  width: 320px;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 10px;
+  border: 3px solid #bdc3c7;
+  border-radius: 5px;
+  color: #333;
+}
+.wrap .link-area #url.focus,
+.wrap .link-area #url:focus {
+  border-color: #ff4665;
+  transition: .2s border ease;
+}
+.wrap .link-area #submit {
+  width: 90px;
+  height: 38px;
+  margin: 0 0 0 5px;
+  background: #ff4665;
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: .2s opacity ease;
+}
+.wrap .link-area #submit:hover {
+  opacity: .75;
+}
+.wrap .link-area #submit:active {
+  opacity: .9;
+}
+.wrap .footer {
+  width: 100%;
+  bottom: 80px;
+  left: 0;
+  position: absolute;
+  color: #7e7e7e;
+}
+.wrap .footer a {
+  color:#ff4665;
+}

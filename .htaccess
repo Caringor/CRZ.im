@@ -1,0 +1,14 @@
+Options -Indexes
+order deny,allow
+
+<Files ~ "^.(htaccess|htpasswd)$">
+deny from all
+</Files>
+
+<Files ~ "^database.db">
+deny from all
+</Files>
+
+RewriteEngine On
+RewriteCond $1 !^(api|asset)
+RewriteRule ^(\d+|\w+)$ index.php?id=$1
