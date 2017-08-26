@@ -5,23 +5,24 @@ var APP = (function(){
     
     // 生成短地址
     setUrl: function(self) {
-      var urlEl = document.getElementById('url');
-      if(urlEl.value) {
-        var request = {
-          "url": urlEl.value
-        };
-        fn.getJson('api/set.php', true, JSON.stringify(request), function(res) {
-           if(res.success == 'true') {
-            urlEl.className = 'focus';
-            urlEl.value = res.content.url;
-           }
-        });
-      } else {
-        urlEl.setAttribute('placeholder', '网址不能为空哦~');
-        setTimeout(function() {
-          urlEl.setAttribute('placeholder', 'https://');
-        }, 2000);
-      }
+      var urlEl = document.getElementById('url'),
+          tips = 'https://',
+          request = {
+            "url": urlEl.value
+          };
+      fn.getJson('api/set.php', true, JSON.stringify(request), function(res) {
+         if(res.success == 'true') {
+          urlEl.className = 'focus';
+          urlEl.value = res.content.url;
+         } else {
+          urlEl.className = '';
+          urlEl.value = '';
+          urlEl.setAttribute('placeholder', res.content);
+          setTimeout(function() {
+            urlEl.setAttribute('placeholder', tips);
+          }, 2000);
+         }
+      });
     },
     
     // 获取 JSON 数据
@@ -45,7 +46,7 @@ var APP = (function(){
   init = function() {
     setTimeout(function() {
       var el = document.getElementsByTagName('html')[0];
-      el.setAttribute('class', 'on');
+      el.className = 'on';
     }, 10);
   };
 

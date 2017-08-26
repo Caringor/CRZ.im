@@ -10,6 +10,6 @@
   // 网站标题
   $config['title'] = 'CRZ.im';
   // 网站简介
-  $config['description'] = '某千岁的域名缩短服务';
+  $config['description'] = '某千岁的网址缩短服务';
 
 ?>
