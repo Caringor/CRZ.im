@@ -1,11 +1,16 @@
-location / {
-  try_files $uri $uri/ =404;
-}
+  location / {
+    try_files $uri $uri/ =404;
+    rewrite (\d+|\w+)$ /index.php?id=$1;
 
-location ~ /inc/ {
-  return 403;
-}
+    location ^~ /asset/ {
+      root /var/www/crz.im;
+    }
 
-location ~* ^/(?![asset|api]) {
-  rewrite (\d+|\w+)$ /index.php?id=$1;
-}
+    location ^~ /api/ {
+      root /var/www/crz.im;
+    }
+
+    location ^~ /inc/ {
+      return 403;
+    }
+  }
