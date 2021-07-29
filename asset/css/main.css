@@ -66,6 +66,7 @@ a:hover {
   border: 3px solid #bdc3c7;
   border-radius: 5px;
   color: #333;
+  max-width: 50vw;
 }
 .wrap .link-area #url.focus,
 .wrap .link-area #url:focus {
